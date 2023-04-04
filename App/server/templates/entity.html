@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+            <h3> Part Entity Id: {{entity_id}}</h3>
+            <hr>
+            <p>Part Id: <a href="/part/{{part_id}}">{{part_id}}</a></p>
+            <p>Indent Address: {{indent}}</p>
+            <p>Handler: {{handler}}</p>
+            <p>Status: {{status}}</p>
+            <p>Location: {{location}}</p>
+            <p>Maintenance Category: {{maintenance_status}}</p>
+            </div>
+            </div>
+    </div>
+
+{% endblock %}

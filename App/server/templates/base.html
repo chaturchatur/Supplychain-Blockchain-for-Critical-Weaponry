@@ -1,0 +1,19 @@
+{% extends 'django_bootstrap5/bootstrap5.html' %}
+
+{% load django_bootstrap5 %}
+
+{% block bootstrap5_content %}
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navy inventory management</a>
+    <div class="d-flex">
+    {% if user.is_authenticated %}
+    <p>{{ user.get_username }} Account:{{account}}</p>
+    {% else %}
+    <p>Welcome, new user. Please log in.</p>
+    {% endif %}
+    </div>
+  </div>
+</nav>
+{% block content %} {% endblock %}
+{% endblock %}

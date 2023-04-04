@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+            <h3> Indents: </h3>
+            <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Indent id</th>
+            <th scope="col">Indent blockchain address</th>
+        </tr>
+        </thead>
+        <tbody>
+           {% for indent in object_list %} 
+                <tr>
+                    <th scope="row">{{indent.pk}}</th>
+                    <td><a href='/indent/{{indent.pk}}'>{{indent.address}}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        </div>
+        <div class="col align-self-right">
+            <a class="btn btn-info" href="/create_indent/" role="button">Create Indent</a>
+            <a class="btn btn-primary" href="/register_part/" role="button">Register Part</a>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}

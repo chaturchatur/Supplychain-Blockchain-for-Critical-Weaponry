@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+            <h3> Indent: {{indent.id}}</h3>
+            <hr>
+            <p>Owner: {{owner}}</p>
+            <p>Creator: {{creator}}</p>
+            <p>Creation Date: {{creation_date}}</p>
+            <p>Reviser: {{reviser}}</p>
+            <p>Revision Date: {{revision_date}}</p>
+            <h4> Part Orders:</h4>
+            <table>
+        <thead>
+        <tr>
+            <th scope="col">Part Id</th>
+            <th scope="col">Dues In</th>
+            <th scope="col">Dues Out</th>
+        </tr>
+        </thead>
+        <tbody>
+           {% for order in  orders%} 
+                <tr>
+                    <th scope="row"><a href='/part/{{order.0}}'>{{order.0}}</a></th>
+                    <td>{{order.1}}</td>
+                    <td>{{order.2}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+            <form method="post">
+                {% csrf_token %}
+
+                {% bootstrap_form form %}
+
+                {% bootstrap_button button_type="submit" content="Add or Edit" %}
+            </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
