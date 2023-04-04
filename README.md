@@ -37,7 +37,7 @@ cd App/server
 ./manage.py runserver
 ```
 Use creds ```
-Username:Krishap 
+Username:Ritvik
 Paswword:test```
  to login at `http://{host:port}/login/`
 ---
