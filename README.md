@@ -1,4 +1,4 @@
-# CSE-1011 Project (Group-12)
+# CSE-1006 Project 
 ##### Blockchain based navy inventory management system
 ##### Indent and Parts contracts are the core elements of the code 
 ##### The database system act as an catalog to link part details to the part ID
